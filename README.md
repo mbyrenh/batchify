@@ -78,7 +78,7 @@ make -j4
 
 If the PC has 8 cores instead, one can leverage all eight cores by changing the last line of the above example to `make -j8`.
 
-As default, batchify creates a separate make job for each single line in the command list. To reduce overhead in cases where many files needs to be processed but the processing of each file only takes a few seconds or milliseconds, batchify accepts a positive, non-zero integer `BATCH_SIZE` as second parameter that lets batchify create a make job for groups of lines in the command list file. In the above example, changing the second step to
+As default, batchify creates a separate make job for each single line in the command list. To reduce overhead in cases where many files needs to be processed but all files require approximately the same time to be processed or where the processing of each file only takes a few seconds or milliseconds, batchify accepts a positive, non-zero integer `BATCH_SIZE` as second parameter that lets batchify create a make job for groups of lines in the command list file. In the above example, changing the second step to
 
 ```sh
 batchify $CMD_LIST 10 > makefile
