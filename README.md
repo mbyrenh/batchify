@@ -22,6 +22,20 @@ For batch-exec:
 batch-exec PATH [BATCH_SIZE] [NUM_CPUS]
 ```
 
+## Installation
+
+You can install batchify and batch-exec via the makefile included in this repository by calling
+
+```sh
+make install
+```
+
+and uninstall both commands by calling
+
+```sh
+make uninstall
+```
+
 ## Usage
 
 For example, given one has a program or script `doSomething` that accepts a single file path as input and does some processing on the file on this path (e.g., compute statistical values about the data contained in the file) and `doSomething` is to be executed on several files. Without batchify, one could do so with a shell script of the form
