@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# SPDX-FileCopyrightText: 2022 Martin Byrenheid <martin@byrenheid.net>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 CMD_LIST_FILE=$1
 BATCH_SIZE=$2
 
