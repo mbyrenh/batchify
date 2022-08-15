@@ -5,7 +5,27 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 CMD_LIST_FILE=$1
+
+if [ -z "$CMD_LIST_FILE" ]; then
+   echo "No command list file path given."
+   exit 1
+fi
+
+if [ ! -f $CMD_LIST_FILE ]; then
+   echo "Given command list file does not exist or is not a regular file."
+   exit 1
+fi
+
 BATCH_SIZE=$2
+
+if [ -z "$BATCH_SIZE" ]; then
+   BATCH_SIZE=1
+fi
+
+if (( $BATCH_SIZE <= 0 )); then
+   echo "Invalid batch size $BATCH_SIZE given."
+   exit 1
+fi
 
 BATCHFILE=`mktemp`
 BATCH_NO=0
